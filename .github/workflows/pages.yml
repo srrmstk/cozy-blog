@@ -31,6 +31,8 @@ jobs:
       - name: Build Astro
         run: yarn build
         working-directory: web
+        env:
+          PUBLIC_STRAPI_URL: ${{ secrets.PUBLIC_STRAPI_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
